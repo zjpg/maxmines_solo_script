@@ -125,7 +125,7 @@
 </section>
 <section class="page-section" id="login">
     <div class="container">
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Đăng nhập</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Tài khoản</h2>
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
@@ -140,7 +140,7 @@
         </div>
         <div class="row">
             <div class="col-lg-8 mx-auto">
-                <form>
+                <form style="<?php if( isset($_COOKIE['xmr_address'])){echo "display: none !important;";}?>">
                     <div class="control-group">
                         <div class="form-group floating-label-form-group controls mb-0 pb-2">
                             <input class="form-control" id="xmr-address" type="text" placeholder="Nhập địa chỉ ví Monero của bạn tại đây" />
@@ -149,9 +149,12 @@
                     <br />
                     <div id="success"></div>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Đăng nhập</button>
+                        <button class="btn btn-primary btn-xl" id="loginButton" type="submit">Đăng nhập</button>
                     </div>
                 </form>
+                <div class="text-center mt-4">
+                    <a class="btn btn-primary btn-xl" style="<?php if(!isset($_COOKIE['xmr_address'])){echo "display: none !important;";}?>" href="/account">Tài khoản của tôi</a>
+                </div>
             </div>
         </div>
     </div>
