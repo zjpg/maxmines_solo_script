@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <link rel="icon" href="https://maxmines.com/assets/images/icon.png" />
 
-        <title>MaxMines Solomining</title>
+        <title><?= $config->site_name ?></title>
 
         <link href="dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="dist/css/fontawesome.min.css" rel="stylesheet" />
