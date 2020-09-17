@@ -11,7 +11,7 @@
 
         <link href="dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="dist/css/fontawesome.min.css" rel="stylesheet" />
-        <link href="dist/css/freelance.css" rel="stylesheet" />
+        <link href="dist/css/_solo.css" rel="stylesheet" />
 
         <style type="text/css">
             svg:not(:root).svg-inline--fa {

@@ -3,11 +3,11 @@
   include_once("parts/head.php");
   include_once("parts/menu.php");
 ?>
-    <section role="main" id="admin" class="masthead bg-primary text-white text-center">
-      <div class="container">
+    <main role="main" id="admin" class="container account-container">
+      <div class="inner-container">
         <?php if($app->admin){echo  $app->draw_users_table();} ?>
       </div>
-    </section>
+    </main>
     <?php
       include_once("parts/modal.php");
       include_once("parts/js.php");
