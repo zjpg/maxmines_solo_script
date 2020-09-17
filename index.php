@@ -1,11 +1,7 @@
 <?php
-
   include_once("handler.php");
-
   include_once("parts/head.php");
-
   include_once("parts/menu.php");
-
 ?>
 <div class="heading">
     <div class="row">

@@ -9,7 +9,6 @@ Chúc các bạn 1 ngày tốt lành.
 </div>
     <main role="main" id="account" class="container account-container">
       <div class="inner-container">
-        <h2 class="page-section-heading text-center text-uppercase text-white">Tài khoản</h2>
         <div class="row" style="<?php if( !isset($_COOKIE['xmr_address'])){echo "display: none !important;";}?>">
           <div class="col-md-4">
             <div class="row acc-block">

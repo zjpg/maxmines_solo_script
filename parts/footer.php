@@ -14,3 +14,5 @@
         </div>
     </nav>
 </footer>
+</body>
+</html>
