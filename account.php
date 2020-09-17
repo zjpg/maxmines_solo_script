@@ -37,7 +37,7 @@ Chúc các bạn 1 ngày tốt lành.
             <p>Số dư (hashes): <span id="balance_hashes" class="white"><?= $app->balance ?></span></p>
 </div>
 <div class="col-md-5 no-padding">
-<p>Số dư (XMR): <span style="color: #fdcb02; font-size: 18px;" id="balance_xmr"><?= $app->balance/1000000*$app->rate ?></span></p>
+<p>Số dư (XMR): <span style="color: #fdcb02; font-size: 18px;" id="balance_xmr"><?= number_format($app->balance/1000000*$app->rate, 8) ?></span></p>
 <p>Xuất chi tối thiểu: <span id="minimal_payout"><?= round($config->minimal_payout, 3) ?></span> XMR </p>
 <div style="padding:5px 0 0 20px;">
   <a class="btn btn-default" style=" display: block;padding: 5px 30px;" href="https://www.facebook.com/100009842742909" target="_blank">
