@@ -7,8 +7,8 @@ include_once("lib/MaxMinesAPI.php");
 
 include_once("lib/Main.php");
 $config= json_decode(file_get_contents("config.json"));
-$wmp    = new MaxMinesAPI($config->mm_private_key);
-$app    = new Main($config, $wmp);
+$mma    = new MaxMinesAPI($config->mm_private_key);
+$app    = new Main($config, $mma);
 
 $action = isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : null);
 switch($action){

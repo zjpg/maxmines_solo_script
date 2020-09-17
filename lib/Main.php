@@ -8,26 +8,28 @@ class Main{
     public $rate;
     public $admin=0;
     public $users;
+    public $chart;
     
     public function __construct($config, $mma){
         $this->config = $config;
         $this->mma    = $mma;
         $this->users  = $this->load_users_from_file();
+        $this->history = $this->load_site_stats_from_file();
         switch(true){
             case $this->is_admin():
                 $this->admin         = true;
-                $this->rate          = file_get_contents(dirname(__FILE__)."/../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
+                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
                 
                 return;
                 break;
             
             case !isset($_COOKIE['xmr_address']):
-                $this->rate          = file_get_contents(dirname(__FILE__)."/../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
+                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
                 return;
                 break;
             
             case isset($_COOKIE['xmr_address'])&&!isset($_COOKIE['rate']):
-                $this->rate          = file_get_contents(dirname(__FILE__)."/../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
+                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
                 $user                = $this->get_user($_COOKIE['xmr_address']);
                 if($user!==false){
                     $this->balance   = $user->balance;
@@ -93,8 +95,19 @@ class Main{
         }
         return json_encode($users["users"]);
     }
+    public function get_chart_data() {
+        $chart = $this->history->history;
+        $val = array();
+        foreach($chart as $data) {
+            array_push($val, [intval($data->time)*1000, (float) $data->hashesPerSecond]);
+        }
+        return json_encode($val);
+    }
     public function load_users_from_file(){
-        return json_decode(file_get_contents(dirname(__FILE__)."/../users.json"));
+        return json_decode(file_get_contents(dirname(__FILE__)."/../../users.json"));
+    }
+    public function load_site_stats_from_file(){
+        return json_decode(file_get_contents(dirname(__FILE__)."/../../history.json"));
     }
     public function get_user($address){
         $users=$this->users;
