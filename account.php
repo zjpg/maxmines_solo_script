@@ -3,7 +3,7 @@
   include_once("parts/head.php");
   include_once("parts/menu.php");
 ?>
-    <section role="main" id="working" class="masthead bg-primary text-white text-center">
+    <section role="main" id="account" class="masthead bg-primary text-white text-center">
       <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-white">Tài khoản</h2>
         <div class="divider-custom divider-light">
@@ -14,8 +14,8 @@
         <div class="row" style="<?php if( !isset($_COOKIE['xmr_address'])){echo "display: none !important;";}?>">
           <div class="col-md-6">
             <h4>Thống kê pool đào:</h4>
-            <h5>Pool rate: <span id="rate"><?= round($app->rate, 8) ?></span> MAI mỗi 1M hashes</h5>
-            <h5>Xuất chi tối thiểu: <span id="minimal_payout"><?= round($config->minimal_payout, 3) ?></span> MAI </h5>
+            <h5>Pool rate: <span id="rate"><?= round($app->rate, 8) ?></span> XMR mỗi 1M hashes</h5>
+            <h5>Xuất chi tối thiểu: <span id="minimal_payout"><?= round($config->minimal_payout, 3) ?></span> XMR </h5>
           </div>
           <div class="col-md-6">
             <h4>Thống kê của bạn:</h4>

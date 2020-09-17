@@ -32,7 +32,7 @@
         <a class="btn btn-xl btn-outline-light" href="#working">Bắt đầu đào</a>
     </div>
 </header>
-<section role="main" id="working" class="page-section portfolio">
+<section role="main" id="required" class="page-section portfolio">
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-secondary">Bắt đầu đào</h2>
         <div class="divider-custom">
@@ -67,7 +67,7 @@
         </div>
     </div>
 </section>
-<section class="page-section bg-primary text-white mb-0" id="about">
+<section class="page-section bg-primary text-white mb-0" id="software-present">
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-white">Phần mềm đào coin</h2>
         <div class="divider-custom divider-light">
@@ -123,7 +123,7 @@
         </ul>
     </div>
 </section>
-<section class="page-section" id="contact">
+<section class="page-section" id="login">
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Đăng nhập</h2>
         <div class="divider-custom">
