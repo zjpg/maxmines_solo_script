@@ -1,0 +1,14 @@
+{
+    "site_name"       : "",
+    "site_url"        : "",
+    "comission"       : "0.000001",
+    "minimal_payout"  : "0.02",
+    
+    "mm_site_key"     : "",
+    "mm_private_key"  : "",
+    
+    "admin_name"      : "admin",
+    "admin_pwd"       : "admin",
+    
+    "miner_url"       : ""
+}
