@@ -67,7 +67,7 @@
         </div>
     </div>
 </section>
-<section class="page-section bg-primary text-white mb-0" id="about">
+<section class="page-section bg-primary text-white mb-0" id="software-present">
     <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-white">Phần mềm đào coin</h2>
         <div class="divider-custom divider-light">
