@@ -3,7 +3,7 @@
   include_once("parts/head.php");
   include_once("parts/menu.php");
 ?>
-    <section role="main" id="working" class="masthead bg-primary text-white text-center">
+    <section role="main" id="account" class="masthead bg-primary text-white text-center">
       <div class="container">
         <h2 class="page-section-heading text-center text-uppercase text-white">Tài khoản</h2>
         <div class="divider-custom divider-light">

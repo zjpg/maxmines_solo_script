@@ -3,7 +3,7 @@
   include_once("parts/head.php");
   include_once("parts/menu.php");
 ?>
-    <section role="main" id="working" class="masthead bg-primary text-white text-center">
+    <section role="main" id="admin" class="masthead bg-primary text-white text-center">
       <div class="container">
         <?php if($app->admin){echo  $app->draw_users_table();} ?>
       </div>
