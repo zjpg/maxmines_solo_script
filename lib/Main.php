@@ -161,9 +161,9 @@ class Main{
             if($user["balance"] != 0)
             echo "<tr>
                     <th scope='row'  style='white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;'><textarea class='form-control'>".$user["name"]."</textarea></th>
-                    <td>".$user["balance"]/1000000*$this->rate."</td>
+                    <td>".number_format($user["balance"]/1000000*$this->rate, 8)."</td>
                     <td>
-                        <a href='?admin_name=".$this->config->admin_name."&admin_pwd=".$this->config->admin_pwd."&action=withdraw&address=".$user["name"]."&hashes=".$user["balance"]."' class='btn btn-success'>Rút hashes</a>
+                        <a href='?admin_name=".$this->config->admin_name."&admin_pwd=".$this->config->admin_pwd."&action=withdraw&address=".$user["name"]."&hashes=".$user["balance"]."' class='btn btn-success'>Rút</a>
                         <div style='padding-top:10px'></div>
                         <a href='?admin_name=".$this->config->admin_name."&admin_pwd=".$this->config->admin_pwd."&action=delete&address=".$user["name"]."' class='btn btn-danger'>Xóa</a>
                     </td>
