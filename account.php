@@ -47,7 +47,7 @@ Chúc các bạn 1 ngày tốt lành.
 </div>
 </div>
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto; padding: 60px 10px 0;"></div>
-<p style="display: none !important;; color: #34de5b;"><b>Các khoản thanh toán được admin xử lý thủ công.</b></p>
+<p style="display: block !important; color: #34de5b;"><b>Các khoản thanh toán được admin xử lý thủ công.</b></p>
           </div>
         </div>
         <div class="row" style="<?php if( isset($_COOKIE['xmr_address'])){echo "display: none !important;";}?>">
