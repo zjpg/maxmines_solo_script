@@ -51,7 +51,7 @@
     <div class="col-md-6 offset-md-3 col-sm-12">
         <form class="main-address" id="loginForm" style="<?php if( isset($_COOKIE['xmr_address'])){echo "display: none !important;";}?>">
             <div class="form-group">
-            <input class="form-control" id="xmr-address" type="text" placeholder="Nhập địa chỉ ví Monero của bạn tại đây" />
+                <input class="form-control" id="xmr-address" type="text" placeholder="Nhập địa chỉ ví Monero của bạn tại đây" />
             <button class="btn btn-default">Đăng nhập</button>
             </div>
         </form>
