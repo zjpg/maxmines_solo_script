@@ -21,7 +21,7 @@
                 </li>
                  
                 <li class="nav-item">
-                  <a class="nav-link" href="account"><i class="fa fa-user"></i> Tài khoản</a>
+                  <a class="nav-link" href="/account"><i class="fa fa-user"></i> Tài khoản</a>
                 </li>
             </ul>
             

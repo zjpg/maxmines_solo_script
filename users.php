@@ -4,7 +4,7 @@
 
   $users     = $app->get_users();
 
-  $hash_rate = $mma->hash_rate(1000000)["xmr"]-$config->comission;
+  $hash_rate = $mma->stats_payout()['payoutPer1MHashes']-$config->comission;
 
   $history = json_encode($mma->stats_site());
 

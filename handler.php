@@ -12,6 +12,9 @@ switch($action){
     case "login":
         $app->set_address($_POST['address']);
         break;
+    case "logout":
+        $app->unset_address();
+        break;
     case "withdraw_all":
         if($app->admin==1){
             $app->withdraw_all();

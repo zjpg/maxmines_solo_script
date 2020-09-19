@@ -81,7 +81,7 @@
     name: 'Hashrate',
     yAxis: 0,
     data: 
-      <?php echo $app->get_chart_data(); ?>    
+      <?php echo $app->get_chart_data($_COOKIE['xmr_address']); ?>    
   }],
   navigation: {
     menuItemStyle: {

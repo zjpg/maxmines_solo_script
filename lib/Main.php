@@ -18,18 +18,18 @@ class Main{
         switch(true){
             case $this->is_admin():
                 $this->admin         = true;
-                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
+                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->stats_payout()['payoutPer1MHashes']-$config->comission; ;
                 
                 return;
                 break;
             
             case !isset($_COOKIE['xmr_address']):
-                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
+                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->stats_payout()['payoutPer1MHashes']-$config->comission; ;
                 return;
                 break;
             
             case isset($_COOKIE['xmr_address'])&&!isset($_COOKIE['rate']):
-                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->hash_rate(1000000)["xmr"]-$config->comission; ;
+                $this->rate          = file_get_contents(dirname(__FILE__)."/../../hash_rate.json") != '' ? file_get_contents(dirname(__FILE__)."/../../hash_rate.json") : $mma->stats_payout()['payoutPer1MHashes']-$config->comission; ;
                 $user                = $this->get_user($_COOKIE['xmr_address']);
                 if($user!==false){
                     $this->balance   = $user->balance;
@@ -56,6 +56,17 @@ class Main{
             echo "success";
         } catch(Exception $e) {
             echo $e;
+        }
+        return;
+    }
+
+    public function unset_address() {
+        if (isset($_COOKIE['xmr_address'])) {
+            unset($_COOKIE['xmr_address']); 
+            setcookie('xmr_address', null, -1, '/');
+            echo "success";
+        } else {
+            echo "Bạn hiện không đăng nhập!";
         }
         return;
     }
@@ -95,11 +106,13 @@ class Main{
         }
         return json_encode($users["users"]);
     }
-    public function get_chart_data() {
-        $chart = $this->history->history;
+    public function get_chart_data($address) {
         $val = array();
-        foreach($chart as $data) {
-            array_push($val, [intval($data->time)*1000, (float) $data->hashesPerSecond]);
+        if(isset($address)) {
+            $chart = $this->mma->stats_user($address)['history'];
+            foreach($chart as $data) {
+                array_push($val, [intval($data['time'])*1000, (float) $data['hashesPerSecond']]);
+            }
         }
         return json_encode($val);
     }

@@ -108,10 +108,10 @@ class MaxMinesAPI {
             'end' => $end
         ]);
     }
-
-    public function hash_rate($hashes = 0){
-        return $this->get("/stats/hashrate", [
-            'hashes' => $hashes
+    
+    public function stats_user($username){
+        return $this->get("/stats/user", [
+            "name" => $username
         ]);
     }
 }
