@@ -64,6 +64,8 @@ class Main{
         if (isset($_COOKIE['xmr_address'])) {
             unset($_COOKIE['xmr_address']); 
             setcookie('xmr_address', null, -1, '/');
+            setcookie('rate', null, -1, '/');
+            setcookie("balance", null, -1, '/');
             echo "success";
         } else {
             echo "Bạn hiện không đăng nhập!";
