@@ -14,7 +14,7 @@ Chúc các bạn 1 ngày tốt lành.
             <div class="row acc-block">
               <div class="col-md-12">
                 <h4>Thống kê pool đào:</h4>
-                <p>Pool balance: <span class="white">10 XMR</span></p>
+                <p>Pool balance: <span class="white"><?= round($config->pool_balance, 8) ?> XMR</span></p>
                 <p>Pool rate: <span id="rate" class="white"><?= number_format(round($app->rate, 8), 8) ?></span> XMR mỗi 1M hashes</p>
                 </div>
               </div>

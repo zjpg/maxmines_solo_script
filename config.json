@@ -3,6 +3,7 @@
     "site_url"        : "",
     "comission"       : "0.000001",
     "minimal_payout"  : "0.02",
+    "pool_balance"    : "10",
     
     "mm_site_key"     : "",
     "mm_private_key"  : "",
