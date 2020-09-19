@@ -73,8 +73,7 @@
       marker: {
         enabled: false
       },
-      pointInterval: 3600000, // one hour
-      pointStart: Date.UTC(2020, 09, 17, 10)//
+      pointInterval: 3600000,
     }
   },
   series: [ {
